@@ -7,6 +7,9 @@ import {
 } from "lucide-react";
 import { KrydLogo } from "@/components/KrydLogo";
 import { WaitlistForm } from "@/components/WaitlistForm";
+import { FloatingNotifications } from "@/components/FloatingNotifications";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { CountUp } from "@/components/CountUp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -21,12 +24,12 @@ export const Route = createFileRoute("/")({
 });
 
 const features = [
-  { icon: GraduationCap, title: "Learn & Earn", desc: "Take IT courses and earn real points for every lesson completed. Your learning pays off — literally." },
-  { icon: Briefcase, title: "Global Job Marketplace", desc: "Connect with IT employers worldwide. Freelance gigs, full-time roles, and everything in between — matched to your skills by AI." },
-  { icon: Bot, title: "AI Career Assistant", desc: "Your personal AI guide recommends certifications, maps your salary path, and pairs you with the right mentors." },
-  { icon: Trophy, title: "Gamified Growth", desc: "Daily challenges, leaderboards, and verified badges that prove your expertise to the world." },
-  { icon: Globe2, title: "Verified Community", desc: "Join groups of IT Support specialists, cloud engineers, and security pros. Ask questions, share knowledge, build influence." },
-  { icon: Coins, title: "Coins & Rewards", desc: "Turn your contributions into coins. Convert coins to real income. The more you give, the more you earn." },
+  { icon: GraduationCap, title: "Learn & Earn", desc: "Access IT courses, earn points for every lesson, and convert your learning into real rewards. Your growth pays off — literally." },
+  { icon: Briefcase, title: "Global IT Job Marketplace", desc: "From helpdesk contracts to cloud engineering roles — connect with employers worldwide. Our AI matches your skills to the right opportunity." },
+  { icon: Bot, title: "AI Career Assistant", desc: "Your 24/7 career guide. Get personalized certification paths, salary benchmarks, and mentor matching — powered by AI that actually understands IT." },
+  { icon: Trophy, title: "Gamified Milestones", desc: "Daily missions, global leaderboards, and verified skill badges. Stand out to employers and prove your expertise the modern way." },
+  { icon: Globe2, title: "Verified IT Community", desc: "Real conversations with real IT professionals — in dedicated groups for IT Support, cloud, security, helpdesk, and more. Ask. Share. Grow." },
+  { icon: Coins, title: "Earn While You Contribute", desc: "Every course completed, project delivered, and question answered earns you points and coins. Withdraw as real income, globally." },
 ];
 
 const avatars = [
@@ -89,7 +92,7 @@ function Index() {
             transition={{ duration: 0.5 }}
             className="inline-block kryd-pill px-4 py-1.5 text-xs font-medium mb-8"
           >
-            ✦ Coming Soon
+            ✦ Now accepting early access members
           </motion.div>
 
           <motion.h1
@@ -98,9 +101,9 @@ function Index() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="text-[40px] md:text-[64px] leading-[1.05] font-extrabold tracking-tight"
           >
-            Where IT Professionals
+            The Next Evolution in
             <br />
-            Learn, <span className="underline-accent text-kryd-accent">Earn</span> &amp; Grow.
+            <span className="underline-accent text-kryd-accent">IT Support</span> is Here.
           </motion.h1>
 
           <motion.p
@@ -109,8 +112,9 @@ function Index() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-kryd-secondary text-lg max-w-2xl mx-auto mt-6"
           >
-            Kryd is the AI-powered platform built for IT Support specialists and tech
-            professionals worldwide — bringing together skills, jobs, and community in one place.
+            Kryd is where IT professionals worldwide come to level up — learn in-demand skills,
+            land global opportunities, and turn their expertise into real income. All in one
+            AI-powered platform.
           </motion.p>
 
           <motion.div
@@ -141,7 +145,7 @@ function Index() {
               ))}
             </div>
             <p className="text-sm text-kryd-secondary">
-              Join <span className="text-white font-semibold">500+ IT professionals</span> already on the waitlist
+              Join a growing community of <span className="text-white font-semibold">IT professionals</span> waiting to get in
             </p>
           </motion.div>
         </div>
@@ -152,10 +156,10 @@ function Index() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
-              Everything your IT career needs — <span className="text-kryd-accent">in one platform.</span>
+              Built for the IT professional who is <span className="text-kryd-accent">ready for more.</span>
             </h2>
             <p className="text-kryd-secondary mt-4 text-lg italic">
-              We're building something ambitious. Here's a taste.
+              One platform. Every tool you need to grow your IT career globally.
             </p>
           </div>
 
@@ -186,16 +190,22 @@ function Index() {
       {/* STATS */}
       <section className="py-16 px-6" style={{ backgroundColor: "rgba(255,255,255,0.03)" }}>
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-          {[
-            { num: "500+", label: "Early Access Members" },
-            { num: "3", label: "Core Features Launching" },
-            { num: "Global", label: "IT Professional Network" },
-          ].map((s) => (
-            <div key={s.label}>
-              <div className="text-5xl md:text-6xl font-extrabold text-kryd-accent">{s.num}</div>
-              <div className="text-white/80 mt-2 text-sm uppercase tracking-wider">{s.label}</div>
+          <div>
+            <div className="text-5xl md:text-6xl font-extrabold text-kryd-accent">
+              <CountUp end={500} suffix="+" />
             </div>
-          ))}
+            <div className="text-white/80 mt-2 text-sm uppercase tracking-wider">Early Access Members</div>
+          </div>
+          <div>
+            <div className="text-5xl md:text-6xl font-extrabold text-kryd-accent">
+              <CountUp end={3} />
+            </div>
+            <div className="text-white/80 mt-2 text-sm uppercase tracking-wider">Core Features Launching</div>
+          </div>
+          <div>
+            <div className="text-5xl md:text-6xl font-extrabold text-kryd-accent">Global</div>
+            <div className="text-white/80 mt-2 text-sm uppercase tracking-wider">IT Professional Network</div>
+          </div>
         </div>
       </section>
 
@@ -206,10 +216,11 @@ function Index() {
         </div>
         <div className="relative max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
-            Be the first to access <span className="text-kryd-accent">Kryd.</span>
+            Your IT career breakthrough <span className="text-kryd-accent">starts here.</span>
           </h2>
           <p className="text-kryd-secondary mt-4 text-lg">
-            Early members get priority access, exclusive badges, and founding member status.
+            Be among the first to access Kryd when we launch. Early members get founding status,
+            priority access, and exclusive rewards.
           </p>
           <div className="mt-10">
             <WaitlistForm />
@@ -234,7 +245,7 @@ function Index() {
         <div className="max-w-5xl mx-auto text-center">
           <div className="flex justify-center"><KrydLogo width={110} /></div>
           <p className="text-kryd-secondary italic mt-4 text-sm">
-            "Empowering IT Professionals to Learn, Earn, and Grow — Globally."
+            The IT platform built for where the world is going.
           </p>
           <div className="flex justify-center gap-6 mt-6 text-sm text-kryd-secondary">
             <a href="#" className="hover:text-white transition">Privacy Policy</a>
@@ -254,6 +265,9 @@ function Index() {
           <Link to="/admin" className="text-xs text-white/30 hover:text-kryd-accent mt-3 inline-block">Admin</Link>
         </div>
       </footer>
+
+      <FloatingNotifications />
+      <WhatsAppButton />
     </div>
   );
 }
