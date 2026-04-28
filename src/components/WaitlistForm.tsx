@@ -35,7 +35,7 @@ export function WaitlistForm({ id }: { id?: string }) {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your work email"
+              placeholder="Enter your email to get early access"
               className="kryd-input flex-1 px-5 py-4 text-base"
             />
             <button
