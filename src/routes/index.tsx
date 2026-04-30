@@ -12,14 +12,6 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { CountUp } from "@/components/CountUp";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Kryd — Where IT Professionals Learn, Earn & Grow" },
-      { name: "description", content: "Kryd is the AI-powered platform built for IT Support specialists and tech professionals worldwide. Join the waitlist for early access." },
-      { property: "og:title", content: "Kryd — Coming Soon" },
-      { property: "og:description", content: "The platform for IT professionals to learn, earn, and grow globally. Join the waitlist." },
-    ],
-  }),
   component: Index,
 });
 
