@@ -5,7 +5,6 @@ import { KrydLogo } from "@/components/KrydLogo";
 import { getWaitlist, formatRegistered, type WaitlistEntry } from "@/lib/waitlist";
 
 export const Route = createFileRoute("/admin")({
-  head: () => ({ meta: [{ title: "Kryd Admin — Waitlist Dashboard" }] }),
   component: Admin,
 });
 
