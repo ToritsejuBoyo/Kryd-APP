@@ -39,25 +39,19 @@ export function WaitlistForm({ id }: { id?: string }) {
       }
 
       if (!res.ok) {
-        setError("Something went wrong. Please try again later.");
+        setError("Try again later");
         setLoading(false);
         return;
       }
 
-      const alreadyExists =
-        data.alreadyExists === true ||
-        data.exists === true ||
-        (typeof data.message === "string" &&
-          /already\s*(on\s*the\s*)?waitlist/i.test(data.message));
-
-      if (alreadyExists) {
-        setMessage("You're already on the Kryd waitlist.");
+      if (data.success === true) {
+        setMessage("You're on the waitlist");
+        setSubmitted(true);
+      } else if (data.success === false) {
+        setMessage("Already registered");
         setSubmitted(true);
       } else {
-        setMessage(
-          "🎉 You're on the Kryd waitlist! Check your inbox for confirmation."
-        );
-        setSubmitted(true);
+        setError("Try again later");
       }
     } catch {
       setError("Network error. Please check your connection and try again.");
