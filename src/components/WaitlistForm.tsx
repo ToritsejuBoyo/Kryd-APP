@@ -25,34 +25,15 @@ export function WaitlistForm({ id }: { id?: string }) {
     setLoading(true);
 
     try {
-      const res = await fetch(ENDPOINT, {
+      await fetch(ENDPOINT, {
         method: "POST",
+        mode: "no-cors",
         headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify({ email: email.trim() }),
       });
 
-      let data: Record<string, unknown> = {};
-      try {
-        data = (await res.json()) as Record<string, unknown>;
-      } catch {
-        // non-JSON response — fall through to status check
-      }
-
-      if (!res.ok) {
-        setError("Try again later");
-        setLoading(false);
-        return;
-      }
-
-      if (data.success === true) {
-        setMessage("You're on the waitlist");
-        setSubmitted(true);
-      } else if (data.success === false) {
-        setMessage("Already registered");
-        setSubmitted(true);
-      } else {
-        setError("Try again later");
-      }
+      setMessage("You're on the waitlist");
+      setSubmitted(true);
     } catch {
       setError("Try again later");
     } finally {
