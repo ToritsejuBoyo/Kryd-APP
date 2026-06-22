@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Check, Loader2 } from "lucide-react";
 
 const ENDPOINT =
-  "https://script.google.com/macros/s/AKfycbyep9MNgFzop53OADJbo8DQTeRPqAVzDUCJcpsxO28dxKgMIjejWEDZk5ECCWtKk9JFlg/exec";
+  "https://script.google.com/macros/s/AKfycbxDK99Q7np7yuTS92lzQZQp7LZoK0ZgI9giktXf4phnDM0jj1x1_ZKB9oiNUQS07zaWiw/exec";
 
 export function WaitlistForm({ id }: { id?: string }) {
   const [email, setEmail] = useState("");
@@ -39,28 +39,22 @@ export function WaitlistForm({ id }: { id?: string }) {
       }
 
       if (!res.ok) {
-        setError("Something went wrong. Please try again later.");
+        setError("Try again later");
         setLoading(false);
         return;
       }
 
-      const alreadyExists =
-        data.alreadyExists === true ||
-        data.exists === true ||
-        (typeof data.message === "string" &&
-          /already\s*(on\s*the\s*)?waitlist/i.test(data.message));
-
-      if (alreadyExists) {
-        setMessage("You're already on the Kryd waitlist.");
+      if (data.success === true) {
+        setMessage("You're on the waitlist");
+        setSubmitted(true);
+      } else if (data.success === false) {
+        setMessage("Already registered");
         setSubmitted(true);
       } else {
-        setMessage(
-          "🎉 You're on the Kryd waitlist! Check your inbox for confirmation."
-        );
-        setSubmitted(true);
+        setError("Try again later");
       }
     } catch {
-      setError("Network error. Please check your connection and try again.");
+      setError("Try again later");
     } finally {
       setLoading(false);
     }
