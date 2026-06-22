@@ -1,22 +1,69 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check } from "lucide-react";
-import { addToWaitlist } from "@/lib/waitlist";
+import { Check, Loader2 } from "lucide-react";
+
+const ENDPOINT =
+  "https://script.google.com/macros/s/AKfycbyep9MNgFzop53OADJbo8DQTeRPqAVzDUCJcpsxO28dxKgMIjejWEDZk5ECCWtKk9JFlg/exec";
 
 export function WaitlistForm({ id }: { id?: string }) {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState<string>("");
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
+    setMessage("");
+
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       setError("Please enter a valid email.");
       return;
     }
-    addToWaitlist(email);
-    setSubmitted(true);
+
+    setLoading(true);
+
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.trim() }),
+      });
+
+      let data: Record<string, unknown> = {};
+      try {
+        data = (await res.json()) as Record<string, unknown>;
+      } catch {
+        // non-JSON response — fall through to status check
+      }
+
+      if (!res.ok) {
+        setError("Something went wrong. Please try again later.");
+        setLoading(false);
+        return;
+      }
+
+      const alreadyExists =
+        data.alreadyExists === true ||
+        data.exists === true ||
+        (typeof data.message === "string" &&
+          /already\s*(on\s*the\s*)?waitlist/i.test(data.message));
+
+      if (alreadyExists) {
+        setMessage("You're already on the Kryd waitlist.");
+        setSubmitted(true);
+      } else {
+        setMessage(
+          "🎉 You're on the Kryd waitlist! Check your inbox for confirmation."
+        );
+        setSubmitted(true);
+      }
+    } catch {
+      setError("Network error. Please check your connection and try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -37,12 +84,21 @@ export function WaitlistForm({ id }: { id?: string }) {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email to get early access"
               className="kryd-input flex-1 px-5 py-4 text-base"
+              disabled={loading}
             />
             <button
               type="submit"
-              className="bg-kryd-accent text-[#0B2D2C] font-bold px-6 py-4 rounded-xl hover:brightness-110 active:scale-[0.98] transition shadow-[0_0_30px_-8px_rgba(204,223,26,0.7)]"
+              disabled={loading}
+              className="bg-kryd-accent text-[#0B2D2C] font-bold px-6 py-4 rounded-xl hover:brightness-110 active:scale-[0.98] transition shadow-[0_0_30px_-8px_rgba(204,223,26,0.7)] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
-              Get Early Access
+              {loading ? (
+                <>
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  Submitting…
+                </>
+              ) : (
+                "Get Early Access"
+              )}
             </button>
           </motion.form>
         ) : (
@@ -57,8 +113,7 @@ export function WaitlistForm({ id }: { id?: string }) {
               <Check className="h-5 w-5 text-[#0B2D2C]" strokeWidth={3} />
             </div>
             <div>
-              <p className="font-semibold text-white">You're on the list!</p>
-              <p className="text-sm text-kryd-secondary">We'll be in touch soon.</p>
+              <p className="font-semibold text-white">{message}</p>
             </div>
           </motion.div>
         )}
