@@ -26,10 +26,10 @@ export function WhatsAppButton() {
             }}
           />
           <a
-            href="#whatsapp-community"
+            href="https://wa.me/2347072363912?text=Hi%2C%20I%27m%20interested%20in%20Kryd%20early%20access"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Join the Kryd Community on WhatsApp"
+            aria-label="Chat with Kryd on WhatsApp"
             className="kryd-wa relative flex items-center justify-center rounded-full"
             style={{
               width: 56,
