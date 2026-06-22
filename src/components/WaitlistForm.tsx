@@ -54,7 +54,7 @@ export function WaitlistForm({ id }: { id?: string }) {
         setError("Try again later");
       }
     } catch {
-      setError("Network error. Please check your connection and try again.");
+      setError("Try again later");
     } finally {
       setLoading(false);
     }
