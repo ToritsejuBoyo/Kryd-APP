@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Check, Loader2 } from "lucide-react";
 
 const ENDPOINT =
-  "https://script.google.com/macros/s/AKfycbyep9MNgFzop53OADJbo8DQTeRPqAVzDUCJcpsxO28dxKgMIjejWEDZk5ECCWtKk9JFlg/exec";
+  "https://script.google.com/macros/s/AKfycbxDK99Q7np7yuTS92lzQZQp7LZoK0ZgI9giktXf4phnDM0jj1x1_ZKB9oiNUQS07zaWiw/exec";
 
 export function WaitlistForm({ id }: { id?: string }) {
   const [email, setEmail] = useState("");
