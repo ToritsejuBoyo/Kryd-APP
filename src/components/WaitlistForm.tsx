@@ -27,7 +27,7 @@ export function WaitlistForm({ id }: { id?: string }) {
     try {
       const res = await fetch(ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify({ email: email.trim() }),
       });
 
