@@ -9,19 +9,11 @@ import { KrydLogo } from "@/components/KrydLogo";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { FloatingNotifications } from "@/components/FloatingNotifications";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { FannedFeatures } from "@/components/FannedFeatures";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
-
-const features = [
-  { icon: GraduationCap, title: "Learn & Earn", desc: "Master new technologies with our curated courses and earn real rewards as you hit learning milestones." },
-  { icon: Briefcase, title: "Global IT Job Marketplace", desc: "Connect with top employers globally. Your verified skills act as your passport to international opportunities." },
-  { icon: Bot, title: "AI Career Assistant", desc: "Get personalized career guidance, résumé reviews, and interview prep powered by advanced AI models." },
-  { icon: Trophy, title: "Gamified Milestones", desc: "Track your progress visually. Unlock badges and achievements that showcase your expertise to the world." },
-  { icon: Globe2, title: "Verified IT Community", desc: "Network with verified peers. Share knowledge, solve complex problems, and build lasting professional relationships." },
-  { icon: Coins, title: "Earn While You Contribute", desc: "Get paid for answering complex queries, creating tutorials, or helping others solve critical IT infrastructure issues." },
-];
 
 function Nav() {
   const [scrolled, setScrolled] = useState(false);
