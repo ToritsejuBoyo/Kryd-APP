@@ -57,14 +57,14 @@ export function WaitlistForm({ id }: { id?: string }) {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email to get early access"
-              className="kryd-input flex-1 px-5 py-4 text-base"
+              placeholder="Enter your email"
+              className="kryd-input flex-1 px-5 py-3.5 text-base"
               disabled={loading}
             />
             <button
               type="submit"
               disabled={loading}
-              className="bg-kryd-accent text-[#0B2D2C] font-bold px-6 py-4 rounded-xl hover:brightness-110 active:scale-[0.98] transition shadow-[0_0_30px_-8px_rgba(204,223,26,0.7)] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="font-mono-tech bg-kryd-accent text-black font-semibold px-6 py-3.5 rounded-lg hover:brightness-110 active:scale-[0.98] transition shadow-[0_10px_40px_-8px_rgba(212,244,41,0.55)] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2 whitespace-nowrap"
             >
               {loading ? (
                 <>
@@ -85,7 +85,7 @@ export function WaitlistForm({ id }: { id?: string }) {
             style={{ borderColor: "rgba(204,223,26,0.5)" }}
           >
             <div className="h-10 w-10 rounded-full bg-kryd-accent flex items-center justify-center">
-              <Check className="h-5 w-5 text-[#0B2D2C]" strokeWidth={3} />
+              <Check className="h-5 w-5 text-black" strokeWidth={3} />
             </div>
             <div>
               <p className="font-semibold text-white">{message}</p>
@@ -95,7 +95,7 @@ export function WaitlistForm({ id }: { id?: string }) {
       </AnimatePresence>
       {error && !submitted && <p className="text-sm text-red-300 mt-2">{error}</p>}
       {!submitted && (
-        <p className="text-xs text-kryd-secondary mt-3 text-center sm:text-left">
+        <p className="text-xs text-kryd-secondary mt-3 text-center flex items-center justify-center gap-1.5">
           🔒 No spam. Just early access and launch updates.
         </p>
       )}
