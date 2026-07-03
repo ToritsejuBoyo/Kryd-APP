@@ -94,19 +94,6 @@ function Index() {
         </div>
       </section>
 
-      {/* PRODUCT MOCKUP */}
-      <section className="relative px-5 md:px-8 pb-24 md:pb-32">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7 }}
-          className="max-w-[1100px] mx-auto"
-        >
-          <ProductMockup />
-        </motion.div>
-      </section>
-
       {/* FEATURES */}
       <section className="py-24 md:py-32 px-5 md:px-8 relative">
         <div className="max-w-[1200px] mx-auto">
