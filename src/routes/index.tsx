@@ -98,7 +98,7 @@ function Index() {
       <section className="py-24 md:py-32 px-5 md:px-8 relative">
         <div className="max-w-[1200px] mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-14 md:mb-20">
-            <div className="inline-flex kryd-pill px-3 py-1 text-[10px] font-mono-tech mb-5">FEATURES</div>
+            
             <h2 className="font-display text-[32px] md:text-5xl font-extrabold tracking-[-0.02em] leading-[1.05]">
               Built for the IT professional who is <span className="text-kryd-accent">ready for more.</span>
             </h2>
