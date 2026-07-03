@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
-  GraduationCap, Briefcase, Bot, Trophy, Globe2, Coins,
   Zap, Gift, Bell, Twitter, Linkedin, Instagram, TrendingUp, Activity, Sparkles,
 } from "lucide-react";
 import { KrydLogo } from "@/components/KrydLogo";
