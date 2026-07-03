@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
-  Zap, Gift, Bell, Twitter, Linkedin, Instagram,
+  Twitter, Linkedin, Instagram,
 } from "lucide-react";
 import { KrydLogo } from "@/components/KrydLogo";
 import { WaitlistForm } from "@/components/WaitlistForm";
@@ -111,36 +111,6 @@ function Index() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 md:py-32 px-5 md:px-8 relative">
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-[700px] h-[500px] kryd-glow" />
-        </div>
-        <div className="relative max-w-3xl mx-auto text-center">
-          <h2 className="font-display text-[32px] md:text-5xl font-extrabold tracking-[-0.02em] leading-[1.05]">
-            Your IT career breakthrough <span className="text-kryd-accent">starts here.</span>
-          </h2>
-          <p className="text-kryd-secondary mt-5 text-base md:text-lg">
-            Be among the first to access Kryd when we launch. Early members get founding status,
-            priority access, and exclusive rewards.
-          </p>
-          <div className="mt-10">
-            <WaitlistForm />
-          </div>
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-            {[
-              { icon: Zap, label: "Early access before public launch" },
-              { icon: Gift, label: "Founding member badge on your profile" },
-              { icon: Bell, label: "First to know about new features" },
-            ].map((b) => (
-              <div key={b.label} className="flex items-center justify-center gap-2 text-kryd-secondary">
-                <b.icon className="h-4 w-4 text-kryd-accent" />
-                <span>{b.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* FOOTER */}
       <footer className="border-t border-white/5 py-14 px-5 md:px-8">
