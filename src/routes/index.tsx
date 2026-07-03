@@ -50,7 +50,7 @@ function Nav() {
 
 function Index() {
   return (
-    <div className="bg-kryd min-h-screen text-white overflow-x-hidden relative">
+    <div className="min-h-screen text-white overflow-x-hidden relative">
       <Nav />
 
       {/* HERO */}
