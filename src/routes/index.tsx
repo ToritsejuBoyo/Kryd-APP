@@ -2,26 +2,17 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
-  GraduationCap, Briefcase, Bot, Trophy, Globe2, Coins,
   Zap, Gift, Bell, Twitter, Linkedin, Instagram, TrendingUp, Activity, Sparkles,
 } from "lucide-react";
 import { KrydLogo } from "@/components/KrydLogo";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { FloatingNotifications } from "@/components/FloatingNotifications";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { FannedFeatures } from "@/components/FannedFeatures";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
-
-const features = [
-  { icon: GraduationCap, title: "Learn & Earn", desc: "Master new technologies with our curated courses and earn real rewards as you hit learning milestones." },
-  { icon: Briefcase, title: "Global IT Job Marketplace", desc: "Connect with top employers globally. Your verified skills act as your passport to international opportunities." },
-  { icon: Bot, title: "AI Career Assistant", desc: "Get personalized career guidance, résumé reviews, and interview prep powered by advanced AI models." },
-  { icon: Trophy, title: "Gamified Milestones", desc: "Track your progress visually. Unlock badges and achievements that showcase your expertise to the world." },
-  { icon: Globe2, title: "Verified IT Community", desc: "Network with verified peers. Share knowledge, solve complex problems, and build lasting professional relationships." },
-  { icon: Coins, title: "Earn While You Contribute", desc: "Get paid for answering complex queries, creating tutorials, or helping others solve critical IT infrastructure issues." },
-];
 
 function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -224,24 +215,7 @@ function Index() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-            {features.map((f, i) => (
-              <motion.div
-                key={f.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="kryd-card p-6 md:p-7 relative group"
-              >
-                <div className="h-11 w-11 rounded-lg bg-kryd-accent/10 border border-kryd-accent/25 flex items-center justify-center mb-5">
-                  <f.icon className="h-5 w-5 text-kryd-accent" />
-                </div>
-                <h3 className="font-display font-bold text-lg md:text-xl mb-2 tracking-tight">{f.title}</h3>
-                <p className="text-kryd-secondary text-[14px] leading-relaxed">{f.desc}</p>
-              </motion.div>
-            ))}
-          </div>
+          <FannedFeatures />
         </div>
       </section>
 
