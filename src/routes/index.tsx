@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
-  Zap, Gift, Bell, Twitter, Linkedin, Instagram, TrendingUp, Activity, Sparkles,
+  Zap, Gift, Bell, Twitter, Linkedin, Instagram,
 } from "lucide-react";
 import { KrydLogo } from "@/components/KrydLogo";
 import { WaitlistForm } from "@/components/WaitlistForm";
