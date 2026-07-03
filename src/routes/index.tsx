@@ -54,7 +54,7 @@ function Index() {
       <Nav />
 
       {/* HERO */}
-      <section className="relative px-5 md:px-8 pt-32 md:pt-40 pb-20 md:pb-28">
+      <section className="relative section-depth px-5 md:px-8 pt-32 md:pt-40 pb-20 md:pb-28">
         <div className="absolute inset-0 dot-grid opacity-40 pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[700px] kryd-glow pointer-events-none" />
 
@@ -95,10 +95,9 @@ function Index() {
       </section>
 
       {/* FEATURES */}
-      <section className="py-24 md:py-32 px-5 md:px-8 relative">
-        <div className="max-w-[1200px] mx-auto">
+      <section className="relative section-depth py-24 md:py-32 px-5 md:px-8">
+        <div className="relative z-10 max-w-[1200px] mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-14 md:mb-20">
-            
             <h2 className="font-display text-[32px] md:text-5xl font-extrabold tracking-[-0.02em] leading-[1.05]">
               Built for the IT professional who is <span className="text-kryd-accent">ready for more.</span>
             </h2>
@@ -113,8 +112,8 @@ function Index() {
 
 
       {/* FOOTER */}
-      <footer className="border-t border-white/5 py-14 px-5 md:px-8">
-        <div className="max-w-5xl mx-auto text-center">
+      <footer className="relative section-depth border-t border-white/5 py-14 px-5 md:px-8">
+        <div className="relative z-10 max-w-5xl mx-auto text-center">
           <div className="flex justify-center"><KrydLogo width={110} /></div>
           <p className="text-kryd-secondary mt-4 text-sm italic">
             The IT platform built for where the world is going.
