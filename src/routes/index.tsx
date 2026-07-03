@@ -98,15 +98,6 @@ function Index() {
       {/* FEATURES */}
       <section className="relative section-depth py-24 md:py-32 px-5 md:px-8">
         <div className="relative z-10 max-w-[1200px] mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-14 md:mb-20">
-            <h2 className="font-display text-[32px] md:text-5xl font-extrabold tracking-[-0.02em] leading-[1.05]">
-              Built for the IT professional who is <span className="text-kryd-accent">ready for more.</span>
-            </h2>
-            <p className="text-kryd-secondary mt-5 text-base md:text-lg">
-              One platform. Every tool you need to grow your IT career globally.
-            </p>
-          </div>
-
           <FannedFeatures />
         </div>
       </section>
