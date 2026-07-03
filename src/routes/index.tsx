@@ -145,15 +145,6 @@ function Index() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[700px] kryd-glow pointer-events-none" />
 
         <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-1.5 kryd-pill px-3.5 py-1.5 text-[11px] font-mono-tech font-medium mb-8"
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-kryd-accent shadow-[0_0_8px_rgba(212,244,41,0.9)]" />
-            NOW ACCEPTING EARLY ACCESS
-          </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
