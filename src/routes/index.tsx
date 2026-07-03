@@ -224,24 +224,7 @@ function Index() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-            {features.map((f, i) => (
-              <motion.div
-                key={f.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="kryd-card p-6 md:p-7 relative group"
-              >
-                <div className="h-11 w-11 rounded-lg bg-kryd-accent/10 border border-kryd-accent/25 flex items-center justify-center mb-5">
-                  <f.icon className="h-5 w-5 text-kryd-accent" />
-                </div>
-                <h3 className="font-display font-bold text-lg md:text-xl mb-2 tracking-tight">{f.title}</h3>
-                <p className="text-kryd-secondary text-[14px] leading-relaxed">{f.desc}</p>
-              </motion.div>
-            ))}
-          </div>
+          <FannedFeatures />
         </div>
       </section>
 
