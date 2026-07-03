@@ -54,9 +54,10 @@ function Index() {
       <Nav />
 
       {/* HERO */}
-      <section className="relative section-depth px-5 md:px-8 pt-32 md:pt-40 pb-20 md:pb-28">
-        <div className="absolute inset-0 dot-grid opacity-40 pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[700px] kryd-glow pointer-events-none" />
+      <section className="relative section-depth px-5 md:px-8 pt-32 md:pt-40 pb-20 md:pb-28 overflow-hidden">
+        <div className="absolute inset-0 dot-grid opacity-30 pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[700px] hero-depth-glow pointer-events-none" />
+        <div className="bottom-traces" />
 
         <div className="relative z-10 max-w-3xl mx-auto text-center">
 
