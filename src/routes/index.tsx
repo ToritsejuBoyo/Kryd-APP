@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
-  Zap, Gift, Bell, Twitter, Linkedin, Instagram, TrendingUp, Activity, Sparkles,
+  Zap, Gift, Bell, Twitter, Linkedin, Instagram,
 } from "lucide-react";
 import { KrydLogo } from "@/components/KrydLogo";
 import { WaitlistForm } from "@/components/WaitlistForm";
@@ -47,92 +47,6 @@ function Nav() {
   );
 }
 
-function ProductMockup() {
-  return (
-    <div className="product-frame relative">
-      <div className="product-frame-inner p-6 md:p-10">
-        {/* Ambient glow behind */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-[80%] h-[70%] kryd-glow" />
-        </div>
-
-        <div className="relative grid md:grid-cols-[1.5fr_1fr] gap-5 items-center">
-          {/* Laptop dashboard */}
-          <div className="rounded-xl border border-white/10 bg-[#0B221C] overflow-hidden">
-            <div className="flex items-center gap-1.5 px-3 py-2 border-b border-white/5">
-              <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
-              <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/70" />
-              <span className="h-2.5 w-2.5 rounded-full bg-green-400/70" />
-              <span className="ml-3 font-mono-tech text-[10px] text-kryd-secondary">app.kryd.io / dashboard</span>
-            </div>
-            <div className="p-4 md:p-5">
-              <div className="flex items-center justify-between mb-4">
-                <div>
-                  <div className="font-display font-bold text-white text-lg leading-tight">Your Next Job Awaits</div>
-                  <div className="text-[11px] text-kryd-secondary mt-0.5">12 matched opportunities this week</div>
-                </div>
-                <div className="font-mono-tech text-[10px] px-2 py-1 rounded-full bg-kryd-accent/15 text-kryd-accent border border-kryd-accent/30">LIVE</div>
-              </div>
-              <div className="grid grid-cols-3 gap-2.5">
-                {[
-                  { t: "Sr. Cloud Eng", c: "Remote · $140k", tag: "AWS" },
-                  { t: "IT Support L2", c: "Berlin · €65k", tag: "M365" },
-                  { t: "SecOps Analyst", c: "Remote · $110k", tag: "SOC" },
-                ].map((j) => (
-                  <div key={j.t} className="rounded-lg border border-white/8 bg-white/[0.03] p-2.5">
-                    <div className="text-[11px] font-semibold text-white leading-tight">{j.t}</div>
-                    <div className="text-[9px] text-kryd-secondary mt-1">{j.c}</div>
-                    <div className="mt-2 inline-block font-mono-tech text-[9px] px-1.5 py-0.5 rounded bg-kryd-accent/15 text-kryd-accent">{j.tag}</div>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-4 rounded-lg border border-white/8 bg-white/[0.03] p-3">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-[11px] text-kryd-secondary">Skill growth · 30d</span>
-                  <span className="font-mono-tech text-[10px] text-kryd-accent flex items-center gap-1"><TrendingUp className="h-3 w-3" />+38%</span>
-                </div>
-                <svg viewBox="0 0 200 40" className="w-full h-10">
-                  <defs>
-                    <linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
-                      <stop offset="0%" stopColor="#D4F429" stopOpacity="0.5" />
-                      <stop offset="100%" stopColor="#D4F429" stopOpacity="0" />
-                    </linearGradient>
-                  </defs>
-                  <path d="M0,32 L20,28 L40,30 L60,22 L80,24 L100,18 L120,20 L140,12 L160,14 L180,6 L200,8 L200,40 L0,40 Z" fill="url(#g)" />
-                  <path d="M0,32 L20,28 L40,30 L60,22 L80,24 L100,18 L120,20 L140,12 L160,14 L180,6 L200,8" fill="none" stroke="#D4F429" strokeWidth="1.5" />
-                </svg>
-              </div>
-            </div>
-          </div>
-
-          {/* Phone card */}
-          <div className="rounded-[28px] border border-white/10 bg-[#0B221C] p-3 md:p-4 mx-auto md:mx-0 max-w-[240px] md:max-w-none">
-            <div className="rounded-[20px] bg-gradient-to-b from-[#12332A] to-[#0A1F1A] p-4 border border-white/5">
-              <div className="flex items-center justify-between mb-3">
-                <span className="font-mono-tech text-[10px] text-kryd-secondary">Skills</span>
-                <Sparkles className="h-3.5 w-3.5 text-kryd-accent" />
-              </div>
-              <div className="text-4xl font-display font-extrabold text-white leading-none">78<span className="text-kryd-accent">%</span></div>
-              <div className="text-[10px] text-kryd-secondary mt-1">Cloud mastery</div>
-              <div className="mt-4 h-1.5 rounded-full bg-white/10 overflow-hidden">
-                <div className="h-full bg-kryd-accent" style={{ width: "78%" }} />
-              </div>
-              <div className="mt-4 flex items-center gap-2">
-                <div className="h-8 w-8 rounded-lg bg-kryd-accent/15 flex items-center justify-center border border-kryd-accent/30">
-                  <Activity className="h-4 w-4 text-kryd-accent" />
-                </div>
-                <div>
-                  <div className="text-[11px] text-white font-semibold leading-tight">+240 pts today</div>
-                  <div className="text-[9px] text-kryd-secondary">Streak · 12 days</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function Index() {
   return (
@@ -178,19 +92,6 @@ function Index() {
             <WaitlistForm />
           </motion.div>
         </div>
-      </section>
-
-      {/* PRODUCT MOCKUP */}
-      <section className="relative px-5 md:px-8 pb-24 md:pb-32">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7 }}
-          className="max-w-[1100px] mx-auto"
-        >
-          <ProductMockup />
-        </motion.div>
       </section>
 
       {/* FEATURES */}
