@@ -38,7 +38,7 @@ export function WaitlistForm({ id }: { id?: string }) {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "text/plain;charset=utf-8" },
-        body: JSON.stringify({ email: email.trim() }),
+        body: JSON.stringify({ email: email.trim(), role: ROLE_LABELS[role] }),
       });
 
       setMessage("You're on the waitlist");
