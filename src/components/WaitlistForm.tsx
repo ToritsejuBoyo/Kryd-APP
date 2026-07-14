@@ -5,12 +5,21 @@ import { Check, Loader2 } from "lucide-react";
 const ENDPOINT =
   "https://script.google.com/macros/s/AKfycbyElM4xzDaB4LsweIxqrMios5HVTfd7PJtsBJC4oosNRxlPlvMmconvRmsQQ_HO7Cevvg/exec";
 
+type Role = "learner" | "hirer";
+
+const ROLE_LABELS: Record<Role, string> = {
+  learner: "Learn & Earn",
+  hirer: "Hire Talent",
+};
+
 export function WaitlistForm({ id }: { id?: string }) {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState<string>("");
+  const [role, setRole] = useState<Role>("learner");
+  const [showRoleSelector, setShowRoleSelector] = useState(false);
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
