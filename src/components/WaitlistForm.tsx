@@ -126,17 +126,16 @@ export function WaitlistForm({ id }: { id?: string }) {
         <p className="text-sm text-red-300 mt-2 text-center">{error}</p>
       )}
 
-      {mounted && (
+      {mounted && isOpen && createPortal(
         <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-[100] flex items-center justify-center p-4"
-              onClick={closeModal}
-            >
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+            onClick={closeModal}
+          >
               <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
 
               <motion.div
