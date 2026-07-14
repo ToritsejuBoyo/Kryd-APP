@@ -259,8 +259,9 @@ export function WaitlistForm({ id }: { id?: string }) {
                 </AnimatePresence>
               </motion.div>
             </motion.div>
-          )}
-        </AnimatePresence>
+          </AnimatePresence>
+        ),
+        document.body
       )}
     </div>
   );
