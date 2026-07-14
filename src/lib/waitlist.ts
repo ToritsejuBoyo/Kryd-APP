@@ -2,6 +2,7 @@ export type WaitlistEntry = {
   email: string;
   registeredAt: string; // ISO
   source: string;
+  role?: "Learn & Earn" | "Hire Talent";
 };
 
 const KEY = "kryd_waitlist";
@@ -17,12 +18,16 @@ export function getWaitlist(): WaitlistEntry[] {
   }
 }
 
-export function addToWaitlist(email: string, source = "Waitlist Page"): boolean {
+export function addToWaitlist(
+  email: string,
+  source = "Waitlist Page",
+  role?: WaitlistEntry["role"]
+): boolean {
   if (typeof window === "undefined") return false;
   const list = getWaitlist();
   const normalized = email.trim().toLowerCase();
   if (list.some((e) => e.email.toLowerCase() === normalized)) return false;
-  list.push({ email: normalized, registeredAt: new Date().toISOString(), source });
+  list.push({ email: normalized, registeredAt: new Date().toISOString(), source, role });
   localStorage.setItem(KEY, JSON.stringify(list));
   return true;
 }
