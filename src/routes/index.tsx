@@ -67,9 +67,9 @@ function Index() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="font-display text-[40px] md:text-[72px] leading-[1.02] font-extrabold tracking-[-0.04em]"
           >
-            The Next Evolution in
+            Trust Infrastructure
             <br />
-            <span className="underline-accent text-kryd-accent">IT Support</span> is Here.
+            for <span className="underline-accent text-kryd-accent">Enterprise IT</span>.
           </motion.h1>
 
           <motion.p
@@ -78,9 +78,8 @@ function Index() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-kryd-secondary text-[17px] md:text-lg max-w-xl mx-auto mt-6 leading-relaxed"
           >
-            Kryd is where IT professionals worldwide come to level up — learn in-demand skills,
-            land global opportunities, and turn their expertise into real income. All in one
-            AI-powered platform.
+            A platform where Enterprise IT professionals build trusted careers through
+            evidence-backed work, learning, assessments, hiring, and professional opportunities.
           </motion.p>
 
           <motion.div
