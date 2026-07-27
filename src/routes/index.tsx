@@ -67,7 +67,7 @@ function Index() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="font-display text-[40px] md:text-[72px] leading-[1.02] font-extrabold tracking-[-0.04em]"
           >
-            Trust Infrastructure
+            Verified Talent
             <br />
             for <span className="underline-accent text-kryd-accent">Enterprise IT</span>.
           </motion.h1>
